@@ -16,10 +16,13 @@ spec:
       containers:
       - image: gcr.io/heptio-images/ks-guestbook-demo:0.1
         env:
-        - name: a
-          value: a value
-        - name: b
-          value: b value
+        - name: VAR1
+          value: var1
+        - name: POD_NAME
+          valueFrom:
+            fieldRef:
+              apiVersion: v1
+              fieldPath: metadata.name
         name: guestbook-ui
         ports:
         - containerPort: 80
