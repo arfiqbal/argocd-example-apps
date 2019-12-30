@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: Secret
+metadata:
+  name: regcred
+  annotations:
+    replicator.v1.mittwald.de/replicate-from: default/regcred
+data:
+  .dockerconfigjson: e30K
+type: kubernetes.io/dockerconfigjson
