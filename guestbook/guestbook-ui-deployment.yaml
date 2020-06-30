@@ -1,8 +1,12 @@
-apiVersion: apps/v1
-kind: Deployment
+apiVersion: argoproj.io/alphav1
+kind: Rollout
 metadata:
   name: guestbook-ui
 spec:
+ strategy:
+    canary:
+      steps:
+      - setWeight: 20
   replicas: 1
   revisionHistoryLimit: 3
   selector:
