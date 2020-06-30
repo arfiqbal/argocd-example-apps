@@ -3,7 +3,7 @@ kind: Rollout
 metadata:
   name: guestbook-ui
 spec:
- strategy:
+  strategy:
     canary:
       steps:
       - setWeight: 20
