@@ -8,6 +8,8 @@ spec:
   selector:
     matchLabels:
       app: guestbook-ui
+  strategy:
+    type: RollingUpdate
   template:
     metadata:
       labels:
